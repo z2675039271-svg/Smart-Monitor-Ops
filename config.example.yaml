@@ -1,0 +1,51 @@
+# Smart-Monitor-Ops 配置文件
+
+api:
+  # API 提供商
+  provider: "deepseek"  # deepseek / openai / custom
+  
+  # API Key（建议使用环境变量，更加安全）
+  # Linux/Mac: export DEEPSEEK_API_KEY="your-key"
+  api_key: ""  # 填入你的 API Key
+  
+  # API 地址
+  base_url: "https://api.deepseek.com"
+  
+  # 模型
+  model: "deepseek-chat"
+
+# 告警通知配置
+notification:
+  # 钉钉通知
+  dingding:
+    enabled: false
+    webhook_url: "https://oapi.dingtalk.com/robot/send?access_token=xxx"
+  
+  # 企业微信通知
+  wecom:
+    enabled: false
+    webhook_url: "https://qyapi.weixin.qq.com/cgi-bin/webhook/send?key=xxx"
+  
+  # 通用 Webhook
+  webhook:
+    enabled: false
+    url: "http://your-webhook-url"
+
+# 告警历史记录
+alerts:
+  # 是否保存诊断历史
+  save_history: true
+  
+  # 历史记录保存目录
+  history_dir: "alerts"
+
+# 服务配置
+server:
+  # 监听地址
+  host: "0.0.0.0"
+  
+  # 监听端口
+  port: 5000
+  
+  # 调试模式
+  debug: false
